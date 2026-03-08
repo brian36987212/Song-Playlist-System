@@ -1,70 +1,69 @@
-# Song Playlist System 🎵
+# 歌曲播放系統 🎵
 
 > 以 C 語言實作的命令列歌曲播放清單管理系統
 
-A command-line song playlist management system implemented in C, featuring full CRUD operations, favorite list management, and CSV-based persistent storage.
+---
+
+## 📌 專案簡介
+
+本專案為 C 語言課程作業，從零實作一套完整的歌曲管理系統。  
+分別以**陣列**與**鏈結串列**兩種資料結構實作，展示兩者在實際應用上的差異。
 
 ---
 
-## 📌 Project Overview
+## 🗂️ 檔案說明
 
-This project was developed as a C programming course assignment. It implements a complete song management system from scratch using two different data structure approaches, demonstrating the practical difference between array-based and linked-list-based implementations.
-
----
-
-## 🗂️ Files
-
-| File | Description |
+| 檔案 | 說明 |
 |---|---|
-| `SongPlayer 3.c` | Main implementation using **Linked List** |
-| `team.c` | Alternative implementation using **Array** |
-| `songlist.csv` | Main song database |
-| `new-songlist.csv` | Updated song list |
-| `favorite-songlist.csv` | Saved favorite songs |
+| `SongPlayer 3.c` | 主要版本，使用**鏈結串列**實作 |
+| `team.c` | 另一版本，使用**陣列**實作 |
+| `songlist.csv` | 主要歌曲資料庫 |
+| `new-songlist.csv` | 更新版歌曲清單 |
+| `favorite-songlist.csv` | 儲存的最愛歌曲清單 |
 
 ---
 
-## ✨ Features
+## ✨ 功能
 
-- ➕ **Add** — Add a new song (name, singer, duration)
-- ❌ **Delete** — Remove a song by name or singer
-- ✏️ **Modify** — Update existing song information
-- 🔍 **Search** — Search songs by singer name
-- 📋 **Show All** — Display all songs in the playlist
-- 🔀 **Random** — Randomly pick a song to play
-- ❤️ **Favorite List** — Add songs to / view personal favorite playlist
-- 💾 **Persistent Storage** — All data read from and written to `.csv` files
-
----
-
-## 🛠️ Tech Stack
-
-- **Language**: C (Standard C)
-- **Data Structures**: Linked List (`SongPlayer 3.c`) / Array (`team.c`)
-- **Storage**: CSV file I/O (`fopen`, `fscanf`, `fprintf`)
-- **Compiler**: GCC
+- ➕ **新增歌曲** — 輸入歌名、歌手、時長新增一首歌
+- ❌ **刪除歌曲** — 依歌名或歌手刪除
+- ✏️ **修改歌曲** — 修改現有歌曲資訊
+- 🔍 **搜尋歌曲** — 依歌手名稱查詢
+- 📋 **顯示全部** — 列出播放清單中所有歌曲
+- 🔀 **隨機播放** — 隨機挑選一首歌播放
+- ❤️ **最愛清單** — 將歌曲加入個人最愛 / 查看最愛清單
+- 💾 **資料持久化** — 所有資料從 `.csv` 讀取並寫回儲存
 
 ---
 
-## 🚀 How to Build & Run
+## 🛠️ 技術
+
+- **語言**：C（Standard C）
+- **資料結構**：鏈結串列（`SongPlayer 3.c`）/ 陣列（`team.c`）
+- **儲存**：CSV 檔案 I/O（`fopen`、`fscanf`、`fprintf`）
+- **編譯器**：GCC
+
+---
+
+## 🚀 編譯與執行
 
 ```bash
-# Compile
+# 編譯
 gcc "SongPlayer 3.c" -o SongPlayer
 
-# Run
+# 執行
 ./SongPlayer
 ```
 
-Make sure `songlist.csv` is in the same directory as the executable.
+> 執行前請確認 `songlist.csv` 與執行檔放在同一目錄下。
 
 ---
 
-## 📊 Data Structure Comparison
+## 📊 兩種實作比較
 
-| | `team.c` | `SongPlayer 3.c` |
+| | `team.c`（陣列） | `SongPlayer 3.c`（鏈結串列） |
 |---|---|---|
-| Structure | Array | Singly Linked List |
-| Insert | O(1) append | O(1) head insert |
-| Delete | O(n) shift | O(n) traverse |
-| Memory | Fixed size | Dynamic allocation |
+| 資料結構 | 固定大小陣列 | 動態單向鏈結串列 |
+| 新增 | O(1) 附加至末端 | O(1) 插入至開頭 |
+| 刪除 | O(n) 需搬移元素 | O(n) 需遍歷 |
+| 記憶體 | 固定配置 | 動態配置 |
